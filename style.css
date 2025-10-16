@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+:root {
+  --white: #F2F2F2;
+  --tx-base: #6e6e6e;
+  --tx-accent: #ffffff;
+  --accent: #F2C894;
+  --blue-700: #7a94aa;
+  --blue-600: #8AABBF;
+  --blue-500: #A9C6D9;
+  --blue-400: #bed2df;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: "Open Sans", sans-serif;
+}
+
+body {
+  background-color: var(--white);
+}
+
+main {
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  grid-template-columns: 100vw;
+  height: 100vh;
+}
+
+.content {
+  max-width: 90rem;
+}
+
+table {
+  table-layout: fixed;
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 63.75rem;
+}
+
+td {
+  height: 5.5rem;
+  border-right: 1rem solid var(--white);
+  border-top: 0.75rem solid var(--white);
+  border-radius: 1rem;
+  padding-left: 1rem;
+  color: var(--tx-base);
+  font-weight: bold;
+  overflow: hidden;
+}
+
+.divider>td {
+  height: 4rem;
+}
+
+.pattern {
+  background:
+    linear-gradient(-45deg, #0000 1.3%, var(--white) 0 32%, #0000 0),
+    linear-gradient(45deg, #0000 48%, var(--blue-700) 0 52%, #0000 0),
+    linear-gradient(45deg, #0000 1.3%, var(--white) 0 32%, #0000 0) calc(32px/2) calc(32px/2),
+    linear-gradient(-45deg, #0000 48%, var(--blue-700) 0 52%, #0000 0) var(--white);
+  background-size: calc(2*32px) 32px, 32px 32px;
+}
+
+.hours {
+  font-family: "Dm Sans", sans-serif;
+  text-align: end;
+  padding-right: 1rem;
+  width: 10ch;
+}
+
+.blue-700,
+.blue-600,
+.blue-500,
+.blue-400 {
+  color: var(--tx-accent);
+}
+
+.blue-700 {
+  background-color: var(--blue-700);
+}
+
+.blue-600 {
+  background-color: var(--blue-600);
+}
+
+.blue-500 {
+  background-color: var(--blue-500);
+}
+
+.blue-400 {
+  background-color: var(--blue-400);
+}
+
+.red {
+  color: #cc6d6d;
+}
+
+.green {
+  color: #42be42;
+}
+
+.quote {
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-align: end;
+}
