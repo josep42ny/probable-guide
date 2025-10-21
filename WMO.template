@@ -1,0 +1,204 @@
+{
+  "00": "☀️",      // Clear sky
+  "01": "🌤️",     // Few clouds
+  "02": "⛅",      // Scattered clouds
+  "03": "☁️",      // Broken clouds
+  "04": "☁️",      // Overcast clouds
+  "05": "🌫️",     // Fog
+  "06": "🌫️",     // Haze
+  "07": "🌫️",     // Smoke
+  "08": "🌫️",     // Dust
+  "09": "🌫️",     // Duststorm/sandstorm
+  "10": "🌫️",     // Mist
+  "11": "🌧️",     // Showers of rain
+  "12": "🌦️",     // Showers, with sunshine
+  "13": "🌦️",     // Light rain showers
+  "14": "🌧️",     // Moderate rain showers
+  "15": "🌧️",     // Heavy rain showers
+  "16": "🌨️",     // Showers of snow
+  "17": "🌨️",     // Snow/rain mixed showers
+  "18": "🌨️",     // Heavy snow showers
+  "19": "❄️",      // Light snow
+  "20": "❄️",      // Moderate snow
+  "21": "❄️",      // Heavy snow
+  "22": "🌨️",     // Snowstorm/blizzard
+  "23": "🌨️",     // Drifting snow
+  "24": "🌨️",     // Blowing snow
+  "25": "🌧️",     // Freezing rain
+  "26": "🌧️",     // Freezing drizzle
+  "27": "🌧️",     // Drizzle, not freezing
+  "28": "🌧️",     // Rain, not freezing
+  "29": "🌦️",     // Intermittent rain
+  "30": "🌩️",     // Thunderstorm (no rain)
+  "31": "⛈️",     // Thunderstorm with rain
+  "32": "⛈️",     // Thunderstorm with hail
+  "33": "🌧️",     // Rain, slight or moderate
+  "34": "🌧️",     // Rain, heavy
+  "35": "🌧️",     // Rain, very heavy/extreme
+  "36": "🌧️",     // Rain, intermittent/light
+  "37": "🌧️",     // Rain, intermittent/heavy
+  "38": "🌧️",     // Rain showers, heavy
+  "39": "🌧️",     // Rain showers, very heavy
+  "40": "🌫️",     // Fog in patches
+  "41": "🌫️",     // Fog, continuous
+  "42": "🌫️",     // Fog with visibility <1km
+  "43": "🌫️",     // Fog, thick
+  "44": "🌫️",     // Fog, very thick
+  "45": "🌪️",     // Tornado
+  "46": "🌬️",     // Strong wind
+  "47": "💨",      // High winds
+  "48": "🌬️",     // Wind with dust/sand
+  "49": "💨",      // Gale/storm force wind
+  "50": "🌫️",     // Light fog
+  "51": "🌫️",     // Fog
+  "52": "🌫️",     // Dense fog
+  "53": "🌫️",     // Freezing fog
+  "54": "🌫️",     // Mist, thick
+  "55": "🌫️",     // Mist, thin
+  "56": "🌫️",     // Haze, dry
+  "57": "🌫️",     // Haze, wet
+  "58": "🌫️",     // Smoke
+  "59": "🌫️",     // Dust or sand
+  "60": "🌦️",     // Rain showers
+  "61": "🌧️",     // Light rain
+  "62": "🌧️",     // Moderate rain
+  "63": "🌧️",     // Heavy rain
+  "64": "🌨️",     // Light snow
+  "65": "🌨️",     // Moderate snow
+  "66": "❄️",      // Heavy snow
+  "67": "🌧️",     // Freezing rain
+  "68": "🌨️",     // Ice pellets
+  "69": "❄️",      // Snow grains
+  "70": "🌨️",     // Slight snowfall
+  "71": "🌨️",     // Moderate snowfall
+  "72": "❄️",      // Heavy snowfall
+  "73": "🌨️",     // Snow, drifting
+  "74": "🌨️",     // Snow, blowing
+  "75": "⛈️",     // Thunderstorm
+  "76": "⛈️",     // Thunderstorm with rain
+  "77": "⛈️",     // Thunderstorm with snow
+  "78": "⛈️",     // Thunderstorm with hail
+  "79": "🌩️",     // Thunderstorm, dry
+  "80": "🌦️",     // Scattered showers
+  "81": "🌧️",     // Widespread showers
+  "82": "🌧️",     // Continuous heavy showers
+  "83": "🌨️",     // Mixed rain/snow showers
+  "84": "🌨️",     // Mixed heavy snow/rain
+  "85": "🌨️",     // Snow showers
+  "86": "❄️",      // Heavy snow showers
+  "87": "🌪️",     // Tornado/waterspout
+  "88": "🌪️",     // Funnel cloud
+  "89": "🌩️",     // Lightning (no thunder)
+  "90": "⛈️",     // Thunder/lightning/rain
+  "91": "🌦️",     // Rain with thunder
+  "92": "🌨️",     // Snow with thunder
+  "93": "⛈️",     // Storm
+  "94": "⛈️",     // Severe storm
+  "95": "⛈️",     // Thunderstorm
+  "96": "⛈️",     // Thunderstorm with hail
+  "97": "⛈️",     // Violent thunderstorm
+  "98": "⛈️",     // Thunderstorm, widespread
+  "99": "🌩️"      // Severe thunderstorm
+}
+{
+  "00": "wi-day-sunny",
+  "01": "wi-day-sunny-overcast",
+  "02": "wi-day-cloudy",
+  "03": "wi-cloudy",
+  "04": "wi-cloudy",
+  "05": "wi-day-fog",
+  "06": "wi-day-haze",
+  "07": "wi-smoke",
+  "08": "wi-dust",
+  "09": "wi-sandstorm",
+  "10": "wi-day-haze",
+  "11": "wi-showers",
+  "12": "wi-day-showers",
+  "13": "wi-day-sprinkle",
+  "14": "wi-showers",
+  "15": "wi-showers",
+  "16": "wi-day-snow",
+  "17": "wi-rain-mix",
+  "18": "wi-snow",
+  "19": "wi-snow",
+  "20": "wi-snow",
+  "21": "wi-snow",
+  "22": "wi-snow-wind",
+  "23": "wi-snow-wind",
+  "24": "wi-snow-wind",
+  "25": "wi-rain",
+  "26": "wi-sleet",
+  "27": "wi-sprinkle",
+  "28": "wi-rain",
+  "29": "wi-day-rain-mix",
+  "30": "wi-thunderstorm",
+  "31": "wi-day-storm-showers",
+  "32": "wi-hail",
+  "33": "wi-rain",
+  "34": "wi-rain",
+  "35": "wi-rain-wind",
+  "36": "wi-day-showers",
+  "37": "wi-showers",
+  "38": "wi-showers",
+  "39": "wi-showers",
+  "40": "wi-fog",
+  "41": "wi-fog",
+  "42": "wi-fog",
+  "43": "wi-fog",
+  "44": "wi-fog",
+  "45": "wi-tornado",
+  "46": "wi-strong-wind",
+  "47": "wi-windy",
+  "48": "wi-wind",
+  "49": "wi-windy",
+  "50": "wi-day-fog",
+  "51": "wi-fog",
+  "52": "wi-fog",
+  "53": "wi-fog",
+  "54": "wi-mist",
+  "55": "wi-mist",
+  "56": "wi-haze",
+  "57": "wi-haze",
+  "58": "wi-smoke",
+  "59": "wi-dust",
+  "60": "wi-day-showers",
+  "61": "wi-rain",
+  "62": "wi-rain",
+  "63": "wi-showers",
+  "64": "wi-snow",
+  "65": "wi-snow",
+  "66": "wi-snowflake-cold",
+  "67": "wi-rain",
+  "68": "wi-ice-pellets",
+  "69": "wi-snowflake-cold",
+  "70": "wi-snow",
+  "71": "wi-snow",
+  "72": "wi-snowflake-cold",
+  "73": "wi-snow-wind",
+  "74": "wi-snow-wind",
+  "75": "wi-thunderstorm",
+  "76": "wi-day-storm-showers",
+  "77": "wi-day-snow-thunderstorm",
+  "78": "wi-hail",
+  "79": "wi-thunderstorm",
+  "80": "wi-day-showers",
+  "81": "wi-showers",
+  "82": "wi-showers",
+  "83": "wi-day-snow",
+  "84": "wi-snow",
+  "85": "wi-snow",
+  "86": "wi-snowflake-cold",
+  "87": "wi-tornado",
+  "88": "wi-tornado",
+  "89": "wi-lightning",
+  "90": "wi-thunderstorm",
+  "91": "wi-day-storm-showers",
+  "92": "wi-day-snow-thunderstorm",
+  "93": "wi-thunderstorm",
+  "94": "wi-thunderstorm",
+  "95": "wi-thunderstorm",
+  "96": "wi-day-storm-showers",
+  "97": "wi-thunderstorm",
+  "98": "wi-thunderstorm",
+  "99": "wi-thunderstorm"
+}
