@@ -16,7 +16,16 @@ function draw(schedule) {
     table = document.createElement('TABLE');
   const rowCount = getMax(schedule) - getMin(schedule);
   //todo
-  table.insertRow();
+  for (let row = 0; row < rowCount; row++) {
+    table.insertRow();
+    for (let col = 0; col < 5) {
+
+    }
+  }
+
+  for (let row = 0; row < rowCount; row++) {
+    table.insertRow();
+  }
 
   for (let day = 0; day < 7; day++) {
 
