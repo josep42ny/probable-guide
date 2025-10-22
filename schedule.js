@@ -1,41 +1,128 @@
 export const SCHEDULE = [
   {
-    8: "sostenibilitat",
-    9: "projecte",
-    10: "servidor",
-    11: "servidor",
-    12: "anglès",
-    13: "optatiu",
-    14: "optatiu",
+    8: {
+      name: "sostenibilitat",
+      color: "cl-cell-400",
+    },
+    9: {
+      name: "projecte",
+      color: "cl-cell-500",
+    },
+    10: {
+      name: "servidor",
+      color: "cl-cell-500",
+    },
+    11: {
+      name: "servidor",
+      color: "cl-cell-500",
+    },
+    12: {
+      name: "anglès",
+      color: "cl-cell-600",
+    },
+    13: {
+      name: "optatiu",
+      color: "cl-cell-700",
+    },
+    14: {
+      name: "optatiu",
+      color: "cl-cell-700",
+    },
   },
   {
-    9: "servidor",
-    10: "servidor",
-    11: "anglès",
-    12: "desplegament",
-    13: "desplegament",
+    9: {
+      name: "servidor",
+      color: "cl-cell-400",
+    },
+    10: {
+      name: "servidor",
+      color: "cl-cell-400",
+    },
+    11: {
+      name: "anglès",
+      color: "cl-cell-500",
+    },
+    12: {
+      name: "desplegament",
+      color: "cl-cell-600",
+    },
+    13: {
+      name: "desplegament",
+      color: "cl-cell-600",
+    },
   },
   {
-    9: "client",
-    10: "client",
-    11: "client",
-    12: "disseny",
-    13: "disseny",
+    9: {
+      name: "client",
+      color: "cl-cell-400",
+    },
+    10: {
+      name: "client",
+      color: "cl-cell-400",
+    },
+    11: {
+      name: "client",
+      color: "cl-cell-400",
+    },
+    12: {
+      name: "disseny",
+      color: "cl-cell-500",
+    },
+    13: {
+      name: "disseny",
+      color: "cl-cell-500",
+    },
   },
   {
-    8: "desplegament",
-    9: "desplegament",
-    10: "anglès",
-    11: "servidor",
-    12: "servidor",
-    13: "disseny",
+    8: {
+      name: "desplegament",
+      color: "cl-cell-400",
+    },
+    9: {
+      name: "desplegament",
+      color: "cl-cell-400",
+    },
+    10: {
+      name: "anglès",
+      color: "cl-cell-500",
+    },
+    11: {
+      name: "servidor",
+      color: "cl-cell-600",
+    },
+    12: {
+      name: "servidor",
+      color: "cl-cell-600",
+    },
+    13: {
+      name: "disseny",
+      color: "cl-cell-700",
+    },
   },
   {
-    8: "disseny",
-    9: "disseny",
-    10: "tutoria",
-    11: "servidor",
-    12: "client",
-    13: "client",
+    8: {
+      name: "disseny",
+      color: "cl-cell-400",
+    },
+    9: {
+      name: "disseny",
+      color: "cl-cell-400",
+    },
+    10: {
+      name: "tutoria",
+      color: "cl-cell-500",
+    },
+    11: {
+      name: "servidor",
+      color: "cl-cell-600",
+    },
+    12: {
+      name: "client",
+      color: "cl-cell-700",
+    },
+    13: {
+      name: "client",
+      color: "cl-cell-700",
+    },
   },
 ];

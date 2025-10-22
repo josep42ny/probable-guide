@@ -4,11 +4,11 @@
   --white: #F2F2F2;
   --tx-base: #6e6e6e;
   --tx-accent: #ffffff;
-  --accent: #F2C894;
-  --blue-700: #7a94aa;
-  --blue-600: #8AABBF;
-  --blue-500: #A9C6D9;
-  --blue-400: #bed2df;
+  --accent: #F2C892;
+  --blue-400: #b8cddb;
+  --blue-500: #a9c6d9;
+  --blue-600: #92b4c9;
+  --blue-700: #83a1b9;
 }
 
 * {
@@ -49,7 +49,7 @@ td {
   border-right: 1rem solid var(--white);
   border-top: 0.75rem solid var(--white);
   border-radius: 1rem;
-  padding-left: 1rem;
+  padding: 0 1rem;
   color: var(--tx-base);
   font-weight: bold;
   overflow: hidden;
@@ -73,29 +73,36 @@ td {
   font-family: "Dm Sans", sans-serif;
   text-align: end;
   padding-right: 1rem;
+  padding-left: 0;
   width: 8ch;
 }
 
-.blue-700,
-.blue-600,
-.blue-500,
-.blue-400 {
+.weather-container {
+  font-size: 0.75rem;
+  text-align: end;
+  color: #ffffff90;
+}
+
+.cl-cell-700,
+.cl-cell-600,
+.cl-cell-500,
+.cl-cell-400 {
   color: var(--tx-accent);
 }
 
-.blue-700 {
+.cl-cell-700 {
   background-color: var(--blue-700);
 }
 
-.blue-600 {
+.cl-cell-600 {
   background-color: var(--blue-600);
 }
 
-.blue-500 {
+.cl-cell-500 {
   background-color: var(--blue-500);
 }
 
-.blue-400 {
+.cl-cell-400 {
   background-color: var(--blue-400);
 }
 
@@ -111,6 +118,9 @@ td {
   font-weight: 700;
   font-size: 0.8rem;
   text-align: end;
+  line-height: 1.75;
+  color: var(--tx-base);
+  margin-top: 1rem;
 }
 
 @media screen and (width <=900px) {
