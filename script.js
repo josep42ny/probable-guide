@@ -1,30 +1,77 @@
 import { WEATHER_CODES } from "./weatherCodes.js";
+import { SCHEDULE } from "./schedule.js";
+import { Cell } from "./Cell.js";
 
 const WEATHER_API = 'https://api.open-meteo.com/v1/forecast?latitude=39.625&longitude=3.1875&hourly=temperature_2m,weather_code&timezone=Europe%2FBerlin&timeformat=unixtime';
-const weatherData = await fetch(WEATHER_API)
-  .then(data => data.json());
-console.log(weatherData);
-const elem = document.querySelector('#weather');
-const hourly = weatherData.hourly;
-for (let i = 0; i < hourly.time.length; i++) {
-  const date = new Date(hourly.time[i] * 1000);
-  if (date.getHours() >= 8 && date.getHours() < 14) {
-    const cell = createCell(hourly.temperature_2m[i], hourly.weather_code[i]);
-    elem.appendChild(cell);
+
+const schedule = await fetch(WEATHER_API)
+  .then(data => data.json())
+  .then(data => mapSchedule(data.hourly));
+
+draw(schedule);
+console.log(getMin(schedule));
+
+function draw(schedule) {
+  const root = document.querySelector('#app'),
+    table = document.createElement('TABLE');
+  const rowCount = getMax(schedule) - getMin(schedule);
+  //todo
+  table.insertRow();
+
+  for (let day = 0; day < 7; day++) {
+
+  }
+
+  root.appendChild(table);
+}
+
+function getMax(schedule) {
+  let max = 0;
+  schedule.forEach(cell => {
+    if (cell.hour > max) {
+      max = cell.hour;
+    }
+  });
+  return max;
+}
+
+function getMin(schedule) {
+  let min = schedule[0].hour;
+  schedule.forEach(cell => {
+    if (cell.hour < min) {
+      min = cell.hour;
+    }
+  });
+  return min;
+}
+
+
+function mapSchedule(hourlyWeather = {}) {
+  const out = [];
+
+  for (let day = 0; day < SCHEDULE.length; day++) {
+    for (let [hour, subject] of Object.entries(SCHEDULE[day])) {
+      hour = parseInt(hour);
+      const index = timeToIndex(day, hour, hourlyWeather.time);
+      const temp = hourlyWeather.temperature_2m[index];
+      const wCode = hourlyWeather.weather_code[index]
+      const obj = new Cell(day, hour, subject, temp, wCode);
+
+      out.push(obj);
+    }
+  }
+  return out;
+}
+
+function timeToIndex(day, hour, array) {
+  for (let i = 0; i < array.length; i++) {
+    const unix = new Date(array[i] * 1000);
+    if (unix.getUTCDay() === day && unix.getUTCHours() === hour) {
+      return i;
+    }
   }
 }
 
-function createCell(temperature, weatherCode) {
-  const icon = document.createElement('I');
-  icon.classList = `wi ${WEATHER_CODES[weatherCode]}`;
-  const temp = document.createElement('P');
-  temp.innerText = `${temperature}°C`;
-
-  const wrapper = document.createElement('DIV');
-  wrapper.appendChild(icon);
-  wrapper.appendChild(temp);
-  return wrapper;
-}
 
 
 // Quotes

@@ -1,0 +1,41 @@
+export const SCHEDULE = [
+  {
+    8: "sostenibilitat",
+    9: "projecte",
+    10: "servidor",
+    11: "servidor",
+    12: "anglès",
+    13: "optatiu",
+    14: "optatiu",
+  },
+  {
+    9: "servidor",
+    10: "servidor",
+    11: "anglès",
+    12: "desplegament",
+    13: "desplegament",
+  },
+  {
+    9: "client",
+    10: "client",
+    11: "client",
+    12: "disseny",
+    13: "disseny",
+  },
+  {
+    8: "desplegament",
+    9: "desplegament",
+    10: "anglès",
+    11: "servidor",
+    12: "servidor",
+    13: "disseny",
+  },
+  {
+    8: "disseny",
+    9: "disseny",
+    10: "tutoria",
+    11: "servidor",
+    12: "client",
+    13: "client",
+  },
+];
