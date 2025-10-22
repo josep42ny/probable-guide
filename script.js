@@ -9,25 +9,26 @@ const schedule = await fetch(WEATHER_API)
   .then(data => mapSchedule(data.hourly));
 
 draw(schedule);
-console.log(getMin(schedule));
+console.log(schedule);
 
 function draw(schedule) {
   const root = document.querySelector('#app'),
-    table = document.createElement('TABLE');
-  const rowCount = getMax(schedule) - getMin(schedule);
-  //todo
-  for (let row = 0; row < rowCount; row++) {
-    table.insertRow();
-    for (let col = 0; col < 5) {
+    table = document.createElement('TABLE'),
+    rowCount = getMax(schedule) - getMin(schedule) + 1;
 
+  for (let row = 0; row < rowCount; row++) {
+    const tRow = table.insertRow();
+    for (let col = 0; col < 5; col++) {
+      tRow.insertCell();
     }
   }
 
-  for (let row = 0; row < rowCount; row++) {
-    table.insertRow();
-  }
+  for (let [key, value] of Object.entries(schedule)) {
+    console.log(value.day);
 
-  for (let day = 0; day < 7; day++) {
+    const row = table.rows[value.hour - getMin(schedule)];
+    const cell = row.cells[value.day];
+    cell.appendChild(document.createTextNode(value.subject + ' ' + value.temperature + 'ºC'));
 
   }
 
@@ -75,7 +76,7 @@ function mapSchedule(hourlyWeather = {}) {
 function timeToIndex(day, hour, array) {
   for (let i = 0; i < array.length; i++) {
     const unix = new Date(array[i] * 1000);
-    if (unix.getUTCDay() === day && unix.getUTCHours() === hour) {
+    if ((unix.getUTCDay() + 1) % 6 === day && unix.getHours() === hour) {
       return i;
     }
   }
