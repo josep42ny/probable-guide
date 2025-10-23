@@ -1,13 +1,16 @@
 import { WEATHER_CODES } from "./weatherCodes.js";
 import { SCHEDULE } from "./schedule.js";
-import { Cell } from "./Cell.js";
+import { Cell } from "./model/types/Cell.js";
 
 const WEATHER_API = 'https://api.open-meteo.com/v1/forecast?latitude=39.625&longitude=3.1875&hourly=temperature_2m,weather_code&timezone=auto&timeformat=unixtime';
 
-const schedule = await fetch(WEATHER_API)
+const service = new WeatherService();
+const schedule = service.getSchedule();
+
+/*const schedule = await fetch(WEATHER_API)
   .then(data => data.json())
   .then(data => mapSchedule(data.hourly));
-
+*/
 draw(schedule);
 
 function draw(schedule) {
