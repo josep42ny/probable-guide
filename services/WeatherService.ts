@@ -10,7 +10,9 @@ class WeatherService {
   public async getSchedule(): Promise<Cell[]> {
     const schedule = await fetch(this.WEATHER_API)
       .then(data => data.json())
-      .then(data => this.mapSchedule(data.hourly));
+      .then(data => data as ApiResponse);
+    //      .then(data => this.mapSchedule(data.hourly));
+    console.log(schedule);
     return [];
   }
 
