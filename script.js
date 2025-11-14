@@ -1,3 +1,8 @@
+import { WeatherService } from './src/services/weather.service.js';
+
+new WeatherService().getHourData().then(console.table);
+
+/*
 import { WEATHER_CODES } from "./weatherCodes.js";
 import { SCHEDULE } from "./schedule.js";
 import { Cell } from "./Cell.js";
@@ -141,3 +146,4 @@ function displayQuote(quotes) {
   quoteElem.innerHTML += '&emsp;';
   document.querySelector('#quote').appendChild(quoteElem);
 }
+*/
