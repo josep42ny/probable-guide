@@ -1,9 +1,11 @@
 import { WeatherService } from './src/services/weather.service.js';
+import { Utils } from './src/utils/Utils.js';
+import { WEATHER_CODES } from './src/model/weatherCodes.js';
 
-new WeatherService().getHourData().then(console.table);
+const w = new WeatherService();
+w.getHourData().then(draw);
 
 /*
-import { WEATHER_CODES } from "./weatherCodes.js";
 import { SCHEDULE } from "./schedule.js";
 import { Cell } from "./Cell.js";
 
@@ -14,11 +16,13 @@ const schedule = await fetch(WEATHER_API)
   .then(data => mapSchedule(data.hourly));
 
 draw(schedule);
-
+*/
 function draw(schedule) {
   const root = document.querySelector('#app'),
     table = document.createElement('TABLE'),
-    rowCount = getMax(schedule) - getMin(schedule) + 1;
+    minHour = Utils.getMinHour(schedule),
+    maxHour = Utils.getMaxHour(schedule),
+    rowCount = maxHour - minHour + 1;
 
   for (let row = 0; row < rowCount; row++) {
     const tRow = table.insertRow();
@@ -27,39 +31,30 @@ function draw(schedule) {
     }
   }
 
-  for (let [key, value] of Object.entries(schedule)) {
-    const row = table.rows[value.hour - getMin(schedule)];
+  for (let value of Object.values(schedule)) {
+    const row = table.rows[value.hour - minHour];
     const cell = row.cells[value.day];
-    const capitalized = value.subject.charAt(0).toUpperCase() + value.subject.slice(1);
     cell.classList = value.color;
 
-    const icon = document.createElement('I');
-    icon.classList = `wi ${WEATHER_CODES[value.wmoCode]}`;
-
-    const temp = document.createElement('P');
-    temp.innerText = `${value.temperature}ºC`;
-
-    const weatherContainer = document.createElement('DIV');
-    weatherContainer.classList = 'weather-container';
-    weatherContainer.appendChild(icon);
-    weatherContainer.appendChild(temp);
-
-    cell.appendChild(document.createTextNode(capitalized));
-    cell.appendChild(weatherContainer);
+    cell.appendChild(createSubjectElement(value.subject));
+    cell.appendChild(createWeatherElement(value.temperature, value.wmoCode));
   }
 
-  const HOURS = ['8:00\n9:00', '9:00\n10:00', '10:00\n11:00', '11:00\n12:00', '12:00\n13:00', '13:00\n14:00', '14:00\n15:00'];
+  const HOURS = [
+    '8:00\n9:00',
+    '9:00\n10:00',
+    '10:00\n11:00',
+    '11:00\n12:00',
+    '12:00\n13:00',
+    '13:00\n14:00',
+    '14:00\n15:00',
+  ];
   const OFFSETS = [5, -10, -15, null, 10, 5, null];
   for (let row = 0; row < table.rows.length; row++) {
     const hour = table.rows[row].insertCell(0);
-    const hourElem = document.createElement('P');
-    hourElem.innerText = HOURS[row];
-    hour.appendChild(hourElem);
     hour.classList = 'hours';
-
-    if (OFFSETS[row]) {
-      table.rows[row].cells[0].appendChild(createStyledNumber(OFFSETS[row]));
-    }
+    hour.appendChild(createHourElement(HOURS[row]));
+    hour.appendChild(createStyledNumber(OFFSETS[row]));
   }
 
   const divider = table.insertRow(3);
@@ -72,33 +67,44 @@ function draw(schedule) {
   root.appendChild(table);
 }
 
-function createStyledNumber(number) {
-  const elem = document.createElement('SPAN');
-  elem.classList = number < 0 ? 'red' : 'green';
-  elem.innerText = number < 0 ? number : `+${number}`;
+function createWeatherElement(temperature, wmoCode) {
+  const weatherContainer = document.createElement('DIV');
+  weatherContainer.classList = 'weather-container';
+
+  const temp = document.createElement('P');
+  temp.innerText = `${temperature}ºC`;
+  weatherContainer.appendChild(temp);
+
+  const icon = document.createElement('I');
+  icon.classList = `wi ${WEATHER_CODES[wmoCode]}`;
+  weatherContainer.appendChild(icon);
+
+  return weatherContainer;
+}
+
+function createSubjectElement(subject) {
+  const capitalized = subject.charAt(0).toUpperCase() + subject.slice(1);
+  return document.createTextNode(capitalized);
+}
+
+function createHourElement(hour) {
+  const elem = document.createElement('P');
+  elem.innerText = hour;
+
   return elem;
 }
 
-function getMax(schedule) {
-  let max = 0;
-  schedule.forEach(cell => {
-    if (cell.hour > max) {
-      max = cell.hour;
-    }
-  });
-  return max;
+function createStyledNumber(number) {
+  if (!number) return document.createTextNode('');
+
+  const elem = document.createElement('SPAN');
+  elem.classList = number < 0 ? 'red' : 'green';
+  elem.innerText = number < 0 ? number : `+${number}`;
+
+  return elem;
 }
 
-function getMin(schedule) {
-  let min = schedule[0].hour;
-  schedule.forEach(cell => {
-    if (cell.hour < min) {
-      min = cell.hour;
-    }
-  });
-  return min;
-}
-
+/*
 
 function mapSchedule(hourlyWeather = {}) {
   const out = [];
