@@ -5,7 +5,7 @@ export class ScheduleView {
   static draw(schedule) {
     const root = document.querySelector('#app'),
       table = document.createElement('TABLE'),
-      OFFSETS = [5, -10, -15, null, 10, 5, null],
+      OFFSETS = [-5, -10, -15, 10, 5, 0, 0],
       minHour = Utils.getMinHour(schedule),
       maxHour = Utils.getMaxHour(schedule),
       rowCount = maxHour - minHour + 1;
